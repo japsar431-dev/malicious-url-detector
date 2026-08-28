@@ -1,7 +1,7 @@
 const loginForm = document.getElementById("loginForm");
 const loginMessage = document.getElementById("loginMessage");
 
-loginForm.addEventListener("submit", function(event) {
+loginForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
@@ -33,14 +33,13 @@ loginForm.addEventListener("submit", function(event) {
 
     // Save login state
 
-    localStorage.setItem("hackVortexLoggedIn", "true");
+    localStorage.setItem("hackvortexloggedin", "true");
 
-    localStorage.setItem("hackVortexUser", email);
-
+    localStorage.setItem("hackvortexuser", email);
 
     // Go to scanner / landing page
 
-    setTimeout(function() {
+    setTimeout(function () {
 
         window.location.href = "landing.html";
 
