@@ -1,5 +1,5 @@
 // Determine API Base URL dynamically
-const API_BASE = window.location.origin.includes(":8000") ? "" : "http://127.0.0.1:8000";
+const API_BASE = "";
 
 document.addEventListener("DOMContentLoaded", loadAnalytics);
 
@@ -26,7 +26,7 @@ function updateAnalyticsUI(data) {
     const malicious = data.malicious_scans || 0;
     const average = data.average_risk_score || 0;
     const uniqueDomains = data.unique_domains || 0;
-    
+
     const safePercent = Math.round(data.safe_percentage || 0);
     const suspiciousPercent = Math.round(data.suspicious_percentage || 0);
     const maliciousPercent = Math.round(data.malicious_percentage || 0);
@@ -65,7 +65,7 @@ function computeLocalAnalyticsFallback() {
     let totalRisk = 0;
     const domains = new Set();
 
-    history.forEach(function(scan) {
+    history.forEach(function (scan) {
         const score = Number(scan.score || scan.risk_score) || 0;
         totalRisk += score;
 
@@ -84,7 +84,7 @@ function computeLocalAnalyticsFallback() {
             }
             const url = new URL(address);
             domains.add(url.hostname);
-        } catch (e) {}
+        } catch (e) { }
     });
 
     const average = total > 0 ? Math.round(totalRisk / total) : 0;
