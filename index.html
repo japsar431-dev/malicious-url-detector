@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackVortex - URL Threat Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">✦</div>
+
+            <div>
+                <h2>HackVortex</h2>
+                <span>URL THREAT DETECTOR</span>
+            </div>
+        </div>
+
+        <div class="nav-links">
+
+    <a href="index.html" class="active">Scanner</a>
+
+    <a href="history.html">History</a>
+
+    <a href="analytics.html">Analytics</a> 
+
+    <a href="login.html"
+       class="logout-btn"
+       onclick="localStorage.removeItem('hackvortexloggedin'); localStorage.removeItem('hackvortexuser');">
+        Logout
+    </a>
+
+</div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <div class="tag">
+            ◉ &nbsp; HEURISTIC THREAT ANALYSIS ENGINE
+        </div>
+
+        <h1>
+            Detect Malicious URLs
+            <br>
+            <span>Before They Bite</span>
+        </h1>
+
+        <p class="description">
+            Paste any URL and our engine extracts 27 structural features,
+            evaluates 18 threat heuristics, and delivers an instant risk
+            verdict — all powered by the HackVortex detection algorithm.
+        </p>
+
+
+        <div class="search-box">
+
+            <div class="globe">◎</div>
+
+            <input
+                type="text"
+                id="urlInput"
+                placeholder="example.com or https://suspicious-site.com/login"
+            >
+
+            <button id="analyzeBtn">
+                ⌕ &nbsp; Analyze
+            </button>
+
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">ϟ</div>
+                <div>
+                    <strong>18</strong>
+                    <span>threat heuristics</span>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">◎</div>
+                <div>
+                    <strong>27</strong>
+                    <span>extracted features</span>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">♢</div>
+                <div>
+                    <strong>0-100</strong>
+                    <span>risk score</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="examples-title">
+            TRY THESE EXAMPLES
+        </div>
+
+
+        <div class="examples">
+
+            <button class="example">
+                🔗 &nbsp; https://google.com
+            </button>
+
+            <button class="example">
+                🔗 &nbsp; http://192.168.1.1/login
+            </button>
+
+            <button class="example">
+                🔗 &nbsp; https://paypal-secure.com/account/verify?id=abc123
+            </button>
+
+            <button class="example">
+                🔗 &nbsp; https://bit.ly/3xYzKp
+            </button>
+
+        </div>
+
+
+        <div id="result"></div>
+
+    </main>
+
+
+    <footer>
+        © 2025 HackVortex. All rights reserved.
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HackVortex - Cybersecurity</title>
+
+    <link rel="stylesheet" href="landing.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">✦</div>
+
+            <div>
+                <h2>HackVortex</h2>
+                <span>URL THREAT DETECTOR</span>
+            </div>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="index.html">Scanner</a>
+            <a href="team.html">Team</a>
+
+            <button onclick="openScanner()">
+                Launch Scanner
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <main id="home">
+
+        <section class="hero">
+
+            <div class="tag">
+                ◉ &nbsp; AI-POWERED URL SECURITY
+            </div>
+
+
+            <h1>
+                Detect Threats.
+                <br>
+                <span>Stay Protected.</span>
+            </h1>
+
+
+            <p class="hero-text">
+                HackVortex is an intelligent URL threat detection
+                platform designed to identify suspicious and
+                malicious links before they become a security risk.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn" onclick="openScanner()">
+                    ⌕ &nbsp; Scan a URL
+                </button>
+
+                <a href="#features" class="secondary-btn">
+                    Explore Features
+                </a>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="hero-stats">
+
+                <div>
+                    <strong>27</strong>
+                    <span>URL FEATURES</span>
+                </div>
+
+                <div>
+                    <strong>18</strong>
+                    <span>THREAT HEURISTICS</span>
+                </div>
+
+                <div>
+                    <strong>0-100</strong>
+                    <span>RISK SCORE</span>
+                </div>
+
+                <div>
+                    <strong>24/7</strong>
+                    <span>PROTECTION</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+
+        <section id="features" class="features-section">
+
+            <div class="section-tag">
+                WHY HACKVORTEX
+            </div>
+
+            <h2>
+                Security at Every
+                <span>Click</span>
+            </h2>
+
+            <p class="section-description">
+                Analyze URLs using multiple security indicators
+                and receive an easy-to-understand risk assessment.
+            </p>
+
+
+            <div class="feature-grid">
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+
+                    <h3>Instant Analysis</h3>
+
+                    <p>
+                        Analyze URLs quickly and receive an
+                        immediate security assessment.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ◈
+                    </div>
+
+                    <h3>Threat Detection</h3>
+
+                    <p>
+                        Identify suspicious URL patterns,
+                        phishing indicators and other threats.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ◎
+                    </div>
+
+                    <h3>Risk Scoring</h3>
+
+                    <p>
+                        Get a simple 0-100 risk score to
+                        understand the potential danger.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ◷
+                    </div>
+
+                    <h3>Scan History</h3>
+
+                    <p>
+                        Keep track of previously analyzed URLs
+                        through your scan history.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="cta">
+
+            <h2>
+                Ready to Check a URL?
+            </h2>
+
+            <p>
+                Protect yourself before clicking suspicious links.
+            </p>
+
+            <button onclick="openScanner()">
+                Start Scanning &nbsp; →
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div>
+            © 2025 HackVortex. All rights reserved.
+        </div>
+
+        <div>
+            URL Threat Detection Platform
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        function openScanner() {
+            window.location.href = "index.html";
+        }
+
+    </script>
+
+</body>
+
+</html>

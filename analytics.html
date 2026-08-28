@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackVortex - Analytics</title>
+    <link rel="stylesheet" href="analytics.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">✦</div>
+
+        <div>
+            <h2>HackVortex</h2>
+            <span>URL THREAT DETECTOR</span>
+        </div>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">⌕ Scanner</a>
+        <a href="history.html">◷ History</a>
+        <a href="analytics.html" class="active">▥ Analytics</a>
+    </div>
+
+</nav>
+
+
+<main class="container">
+
+    <h1>Analytics Dashboard</h1>
+
+    <p class="subtitle">
+        Aggregate statistics across all your scans.
+    </p>
+
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-icon blue">⌁</div>
+            <div>
+                <strong id="totalScans">0</strong>
+                <span>TOTAL SCANS</span>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon green">✓</div>
+            <div>
+                <strong id="safeScans">0</strong>
+                <span>SAFE</span>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon yellow">!</div>
+            <div>
+                <strong id="suspiciousScans">0</strong>
+                <span>SUSPICIOUS</span>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon red">!</div>
+            <div>
+                <strong id="maliciousScans">0</strong>
+                <span>MALICIOUS</span>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon purple">↗</div>
+            <div>
+                <strong id="averageScore">0</strong>
+                <span>AVG RISK SCORE</span>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon blue">◎</div>
+            <div>
+                <strong id="uniqueDomains">0</strong>
+                <span>UNIQUE DOMAINS</span>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="risk-card">
+
+        <h2>RISK DISTRIBUTION</h2>
+
+        <div class="risk-row">
+
+            <div class="risk-label">
+                <span>Safe</span>
+                <span id="safePercent">0%</span>
+            </div>
+
+            <div class="progress">
+                <div id="safeBar" class="bar safe-bar"></div>
+            </div>
+
+        </div>
+
+
+        <div class="risk-row">
+
+            <div class="risk-label">
+                <span>Suspicious</span>
+                <span id="suspiciousPercent">0%</span>
+            </div>
+
+            <div class="progress">
+                <div id="suspiciousBar" class="bar suspicious-bar"></div>
+            </div>
+
+        </div>
+
+
+        <div class="risk-row">
+
+            <div class="risk-label">
+                <span>Malicious</span>
+                <span id="maliciousPercent">0%</span>
+            </div>
+
+            <div class="progress">
+                <div id="maliciousBar" class="bar malicious-bar"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div id="noData" class="no-data">
+        No scans available yet. Go to Scanner and analyze a URL.
+    </div>
+
+</main>
+
+
+<script src="analytics.js"></script>
+
+</body>
+</html>
