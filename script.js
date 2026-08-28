@@ -57,7 +57,7 @@ async function analyzeURL() {
                     ✖ Failed to connect to Backend Scanner: ${escapeHTML(error.message)}
                 </p>
                 <span style="font-size: 13px; color: #88909d; font-weight: normal;">
-                    Ensure the FastAPI backend is running on <code>http://127.0.0.1:8000</code> and MySQL is active.
+                    Ensure the backend service is running and the database is connected.
                 </span>
             </div>
         `;
