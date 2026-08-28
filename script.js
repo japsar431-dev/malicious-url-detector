@@ -3,7 +3,7 @@ const analyzeBtn = document.getElementById("analyzeBtn");
 const result = document.getElementById("result");
 
 // Determine API Base URL dynamically (handles both Live Server / file:// and direct FastAPI hosting)
-const API_BASE = window.location.origin.includes(":8000") ? "" : "http://127.0.0.1:8000";
+const API_BASE = "";
 
 analyzeBtn.addEventListener("click", analyzeURL);
 
@@ -167,8 +167,8 @@ function escapeHTML(text) {
 
 // Example buttons
 const examples = document.querySelectorAll(".example");
-examples.forEach(function(example) {
-    example.addEventListener("click", function() {
+examples.forEach(function (example) {
+    example.addEventListener("click", function () {
         const text = example.textContent
             .replace("🔗", "")
             .trim();
@@ -178,7 +178,7 @@ examples.forEach(function(example) {
 });
 
 // Press Enter to analyze
-urlInput.addEventListener("keydown", function(event) {
+urlInput.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         analyzeBtn.click();
     }
@@ -187,5 +187,5 @@ urlInput.addEventListener("keydown", function(event) {
 function logout() {
     localStorage.removeItem("hackvortexloggedin");
     localStorage.removeItem("hackvortexuser");
-    window.location.href = "login.html";
+    window.location.href = "/login.html";
 }
