@@ -1,7 +1,7 @@
 const historyList = document.getElementById("historyList");
 
 // Determine API Base URL dynamically
-const API_BASE = window.location.origin.includes(":8000") ? "" : "http://127.0.0.1:8000";
+const API_BASE = "";
 
 document.addEventListener("DOMContentLoaded", fetchScanHistory);
 
@@ -24,7 +24,7 @@ async function fetchScanHistory() {
 
     } catch (error) {
         console.warn("Backend fetch failed, checking local cache:", error);
-        
+
         // Fallback to local storage cache if backend is starting or offline
         const localHistory = JSON.parse(localStorage.getItem("hackVortexHistory")) || [];
         if (localHistory.length > 0) {
@@ -64,7 +64,7 @@ function renderHistoryList(scans, isLocalFallback = false) {
         historyList.appendChild(notice);
     }
 
-    scans.forEach(function(scan) {
+    scans.forEach(function (scan) {
         const riskScore = scan.risk_score !== undefined ? scan.risk_score : scan.score;
         const classification = scan.classification || (scan.status === "danger" ? "MALICIOUS" : scan.status === "warning" ? "SUSPICIOUS" : "SAFE");
 
@@ -109,7 +109,7 @@ function renderHistoryList(scans, isLocalFallback = false) {
             </div>
         `;
 
-        item.addEventListener("click", function() {
+        item.addEventListener("click", function () {
             showScanModal(scan, riskScore, classification, formattedTime);
         });
 
@@ -119,8 +119,8 @@ function renderHistoryList(scans, isLocalFallback = false) {
 
 function showScanModal(scan, riskScore, classification, formattedTime) {
     const reasons = scan.detection_reasons || [];
-    const reasonsList = reasons.length > 0 
-        ? reasons.map(r => `• ${r}`).join("\n") 
+    const reasonsList = reasons.length > 0
+        ? reasons.map(r => `• ${r}`).join("\n")
         : "• No threat indicators triggered";
 
     alert(
@@ -140,13 +140,13 @@ function formatTimestamp(timestamp) {
     try {
         const date = new Date(timestamp);
         if (isNaN(date.getTime())) return String(timestamp);
-        
+
         // Relative time or localized format
         const diffSeconds = Math.floor((Date.now() - date.getTime()) / 1000);
         if (diffSeconds < 60) return "Just now";
         if (diffSeconds < 3600) return `${Math.floor(diffSeconds / 60)}m ago`;
         if (diffSeconds < 86400) return `${Math.floor(diffSeconds / 3600)}h ago`;
-        
+
         return date.toLocaleDateString() + " " + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     } catch (e) {
         return String(timestamp);
